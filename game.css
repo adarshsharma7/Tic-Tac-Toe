@@ -30,7 +30,7 @@ body{
 
 }
 .game{
-    border: 5px solid green;
+   
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -48,6 +48,10 @@ body{
     font-size: 8vmin;
     background-color: aliceblue;
     color: #b0413e;
+    transition: all 0.1s ease-in;
+}
+.ticTakToe:hover{
+    transform: scale(1.03);
 }
 .resetBtn{
     padding: 1rem;
@@ -85,6 +89,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 15px;
     align-items: center;
     /* background-color: #afabb6; */
     transition: all 0.1s ease-in;
