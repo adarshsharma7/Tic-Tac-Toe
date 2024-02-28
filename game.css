@@ -21,8 +21,6 @@ body{
 
     height: 100%; 
     width: 100%;
-    border: 2px solid rgb(132, 181, 8);
-  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,8 +146,12 @@ body{
 @media (max-width:825px) {
     .main{
         position:absolute;
-        top:50px;
+        top:70px;
        
     }
-  
+  .playerName{
+    /* left: 40px; */
+    margin-left: 32px;
+    margin-right: 42px;
+  }
 }
