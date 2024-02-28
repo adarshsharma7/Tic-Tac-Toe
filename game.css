@@ -21,8 +21,6 @@ body{
 
     height: 100%; 
     width: 100%;
-    border: 2px solid rgb(132, 181, 8);
-  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +28,6 @@ body{
 
 }
 .game{
-    border: 5px solid green;
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -138,8 +135,5 @@ body{
         position:absolute;
         top:50px;
        
-    }
-    .playerName{
-     
     }
 }
