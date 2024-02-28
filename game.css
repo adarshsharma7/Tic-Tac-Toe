@@ -8,7 +8,7 @@ body{
     text-align: center;
 }
 .container{
-    border: 2px solid red;
+   
     height: 95vh;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@ body{
     /* border: 2px solid red; */
 }
 .game{
-    border: 5px solid green;
+   
     height: 60vmin;
     width: 60vmin;
     display: flex;
