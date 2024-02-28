@@ -2,10 +2,52 @@ let boxes=document.querySelectorAll(".ticTakToe")
 let resetBtn=document.querySelector(".resetBtn")
 let newGameBtn=document.querySelector(".newgameBtn")
 let msg=document.querySelector(".msg")
+let enterName=document.querySelector(".enterName")
+let submitName=document.querySelector(".submitName")
+let submitNameO=document.querySelector(".submitNameO")
+let enterNameO=document.querySelector(".enterNameO")
+let boxCount=0;
 let turnX=true;
-let X=prompt("name for X")
-let O=prompt("name for O")
+let X;
+let O;
+// let X=prompt("name for X")
+// let O=prompt("name for O")
+const disableBoxes=()=>{
+  for (const iterator of boxes) {
+   boxCount=0;
+      iterator.disabled=true
+  }
+}
+const startforO=()=>{
+  document.querySelector(".formO").style.display="block"
+  enterNameO.placeholder="Enter Name For O"
+  submitNameO.addEventListener("click",(e)=>{
+     O=enterNameO.value
+     e.preventDefault()
+     document.querySelector(".formO").style.display="none"
+     document.querySelector(".player1").innerHTML=`Player1(X)=${X}`
+     document.querySelector(".player2").innerHTML=`Player2(O)=${O}`
+     enableBox()
+  })
+}
+const startforX=async()=>{
 
+  disableBoxes()
+  msg.style.display="none"
+  
+  document.querySelector(".formO").style.display="none"
+  enterName.placeholder="Enter Name For X"
+  document.querySelector(".formX").style.display="block"
+   submitName.addEventListener("click",(e)=>{
+   X=enterName.value
+
+   e.preventDefault()
+   document.querySelector(".formX").style.display="none"
+  startforO()
+})
+}
+startforX()
+ 
 
 const winPattern=[
     [0,1,2],
@@ -31,7 +73,7 @@ const resetGame=()=>{
     enableBox();
     msg.style.display="none"
 }
-let boxCount=0;
+// let boxCount=0;
 boxes.forEach((box)=>{
     box.addEventListener("click",()=>{
        if(turnX){
@@ -58,12 +100,12 @@ boxes.forEach((box)=>{
      
     })
 })
-const disableBoxes=()=>{
-   for (const iterator of boxes) {
-    boxCount=0;
-       iterator.disabled=true
-   }
-}
+// const disableBoxes=()=>{
+//    for (const iterator of boxes) {
+//     boxCount=0;
+//        iterator.disabled=true
+//    }
+// }
 const enableBox=()=>{
   for (const iterator of boxes) {
     boxCount=0
@@ -92,6 +134,7 @@ const checkWinner=()=>{
                   
                
                  if(!turnX){
+                  console.log(X)
                     showWinner(X);
                      // disableBoxes();
                 //   console.log("winner",X)
@@ -110,9 +153,12 @@ const checkWinner=()=>{
     //         i.disabled=true;
     //     }
     // };
+    const newgame=()=>{
+      startforX()
+    }
   resetBtn.addEventListener("click",resetGame)
 
-  newGameBtn.addEventListener("click",resetGame)
+  newGameBtn.addEventListener("click",newgame)
    
 
 }
