@@ -11,11 +11,12 @@
 <body>
 
     <div class="container">
-        <div class="msg-Container">
-             <p class="msg ">Winner</p>
-        <button class="newgameBtn">New Game</button>
+        <div class="main">
+              <div class="msg-Container">
+            <!-- <p class="msg ">Winner</p> -->
+            <button class="newgameBtn">New Game</button>
         </div>
-       
+
         <h1>Toc-Tak-Toe</h1>
         <div class="game">
             <button class="ticTakToe"></button>
@@ -29,8 +30,26 @@
             <button class="ticTakToe"></button>
         </div>
         <button class="resetBtn">Reset</button>
+        </div>
+      
+
+        <div class="playerName">
+            <h1 class="player1"> </h1>
+            <h1 class="player2"> </h1>
+            <p class="msg ">Winner</p>
+            <form class="formX">
+                <input type="text" value="" class="enterName">
+                <input type="submit" class="submitName">
+            </form>
+            <form class="formO">
+                <input type="text" value="" placeholder="Enter Name for O" class="enterNameO">
+                <input type="submit" class="submitNameO">
+            </form>
+        </div>
+
     </div>
-   
+
+
     <script src="game.js"></script>
 </body>
 
